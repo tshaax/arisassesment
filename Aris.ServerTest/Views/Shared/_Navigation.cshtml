@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNetCore.Http
+
+@inject IHttpContextAccessor contextAccessor
+
+<ul class="nav navbar-nav flex-grow-1">
+
+    <li class="nav-item">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">Games</a>
+    </li>
+    <li class="nav-item">
+        <a asp-area="" asp-controller="Home" asp-action="About" class="nav-link">About</a>
+    </li>
+
+    @if (contextAccessor.HttpContext.User.IsInRole("player"))
+    {
+        <li class="nav-item">
+            <a asp-area="" asp-controller="Account" asp-action="Logout" class="nav-link">Logout</a>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a asp-area="" asp-controller="Account" asp-action="Register" class="nav-link">Register</a>
+        </li>
+
+        <li class="nav-item">
+            <a asp-area="" asp-controller="Account" asp-action="Login" class="nav-link">Login</a>
+        </li>
+    }
+</ul>

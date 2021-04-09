@@ -1,0 +1,61 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    margin-bottom: 60px;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    height: 60px;
+    line-height: 60px;
+}
+
+.diamond-medal {
+    color: #212529;
+    background-color: #deebff;
+}
+
+.gold-medal {
+    color: #212529;
+    background-color: #ffd700;
+}
+
+.silver-medal {
+    color: #fff;
+    background-color: #c0c0c0;
+}
+
+.bronze-medal {
+    color: #fff;
+    background-color: #cd7f32;
+}
+
+.blue-medal {
+    color: #fff;
+    background-color: #007bff;
+}
+
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

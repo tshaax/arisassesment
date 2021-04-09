@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Aris.ServerTest/bin/Debug/netcoreapp2.1
+/Aris.ServerTest/obj
+/2019-09-16-bd28f1e-interview-test.zip
+**/bin
+**/obj

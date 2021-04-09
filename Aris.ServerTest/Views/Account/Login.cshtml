@@ -1,0 +1,52 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container">
+
+    <main role="main" class="pb-3">
+
+        <h1>Log in</h1>
+
+        <div class="row">
+            <div class="col-md-4">
+                <section>
+                    <form asp-controller="Account" asp-action="Login" method="post" >
+
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control" type="email" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" class="form-control" type="password" required />
+                        </div>
+
+                        <div class="text-danger">@Model.ErrorMessage</div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Log in</button>
+                        </div>
+
+                        <div class="form-group">
+                            <p>
+                                <a asp-area="" asp-controller="Account" asp-action="ResetPassword">Forgot your password?</a>
+                            </p>
+                            <p>
+                                <a asp-area="" asp-controller="Account" asp-action="Register">Register as a new user</a>
+                            </p>
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+</div>

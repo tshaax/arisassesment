@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+
+<p>Welcome to the ArisTx practical test.</p>
+
+<h3>Overview</h3>
+
+<p>The practical test should take around 90 minutes although there is no strict time limit.  Please try and complete as many of the tasks as possible.</p>
+
+<p>Please commit your code to the Git repository after each task has been completed.</p>
+
+<p>This website is a mock casino that pulls a list of games onto the page via an API named Kore.  You will need to read and understand some of the Kore 
+    API documentation to be able to complete some of the tasks below.  The Kore API documentation can be found <a href="https://doc-kore7.aristx.net/" target="_blank">here</a>.</p>
+
+<h3>Tasks</h3>
+
+<p>Please follow the instructions below...</p>
+
+<ol>
+
+    <li>
+        The solution will not build.  Find and fix the build error which is preventing this.
+    </li>
+
+    <li>
+        When the application first runs, an application error is displayed.  Please identify the cause of the error and modify the code to prevent it.
+        Once the error has been fixed, the application should display a list of games.
+    </li>
+
+    <li>
+        The games are displayed in a table on the main page.  Add a new column to the table titled "Free spins"
+        Modify the application so that the "free_spins" attribute is displayed in this column for all rows where it is returned from the Kore API.
+    </li>
+
+    <li>
+        Modify the code so that the list of games is ordered by Category, then Platform, then Name.
+    </li>
+
+    <li>
+        Populate the category dropdown on the main page with a list of all possible categories.  Implement filtering so that the when a category is chosen,
+        only the games that match that category are displayed in the table.
+    </li>
+
+    <li>
+        Next to each game is an "Info" link.  When one of these links is clicked, the application should display the rules and description for the game.
+        This information can be in a pop-up or added to the page somewhere that you think is appropriate.  This should be done by using Javascript to call the
+        Details action on the Home controller.
+    </li>
+
+    <li>
+        <p>Implement the missing code in the application so that the login page works.  You should use the KoreClaimsService to do this. You will need to obtain a player token (see <a href="https://doc-kore7.aristx.net/#obtain-a-player-token" target="_blank">here</a>).</p>
+        
+        <p>Before you start this, you will need to register a user:</p>
+        <ul>
+            <li>Run the application and click on the Register menu option</li>
+            <li>Complete the form and ensure that account currency and country are set to United States <b>(important!)</b></li>
+        </ul>
+
+        <p>
+            You will be able to use these credentials to log in when you've modified the code.
+            If you use a genuine email address then you will be able to use the reset password feature.  On successful completion of this task, some of the games
+            in the table will be clickable.  Clicking on these links will launch the games.
+        </p>
+
+        <p>Please note that your account may be locked out if you use the wrong password 3 times in a row.  You can use the reset password feature to unlock your account if this happens.</p>
+    </li>
+</ol>
