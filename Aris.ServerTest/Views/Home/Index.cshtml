@@ -2,8 +2,7 @@
 
 @{
     ViewData["Title"] = "Games List";
-    SelectList categories = new SelectList(@ViewBag.Category,"Category","Category");
-    var currentlySelectedIndex = 0;
+   
 }
 
 <div class="row">
@@ -17,7 +16,7 @@
 
             <div class="form-group">
                 <label class="my-1 mr-2" for="category-filter">Category</label>
-                <select id="category-filter" asp-for="@currentlySelectedIndex" asp-items="categories" class="custom-select"></select>
+                <select id="category-filter" asp-items="@ViewBag.Categories" class="custom-select"></select>
             </div>
 
         </form>

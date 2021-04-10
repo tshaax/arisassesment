@@ -23,14 +23,17 @@ namespace Aris.ServerTest.Controllers
             var viewModel = new ViewModels.GamesListViewModel();
             var games = await _gameService.GetGamesAsync(GetAuthToken(), returnUrl);
 
-            viewModel.Games = games.OrderByDescending(o=> o.Category).ThenBy(o => o.Platform).ThenBy(o => o.Name);
+            if (catFilter != null)
+                games.Where(w => w.Category == catFilter).ToList();
 
-            ViewBag.Category = viewModel.Games.AsEnumerable().Select(li => new SelectListItem
-            {
-                Text = li.Category,
-                Value = li.Category,
-                Selected = li.Category == catFilter
-            });
+            viewModel.Games = games
+                .OrderByDescending(o => o.Category)
+                .ThenBy(o => o.Platform)
+                .ThenBy(o => o.Name);
+
+            var categories = viewModel.Games.Select(s => s.Category).Distinct().ToList();
+
+            ViewBag.Categories = new SelectList(categories);
 
             return View(viewModel);
         }
